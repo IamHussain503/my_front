@@ -44,10 +44,10 @@ class AIModelService:
     def get_config(self):
         parser = argparse.ArgumentParser()
 
-        parser.add_argument("--alpha", default=0.75, type=float, help="The weight moving average scoring.")
+        parser.add_argument("--alpha", default=0.1, type=float, help="The weight moving average scoring.")
         parser.add_argument("--custom", default="my_custom_value", help="Adds a custom value to the parser.")
         parser.add_argument("--subtensor.network", type=str, default=args['subtensor_network'], help="The logging directory.")
-        parser.add_argument("--netuid", default=50, type=int, help="The chain subnet uid.")
+        parser.add_argument("--netuid", default=31, type=int, help="The chain subnet uid.")
         parser.add_argument("--wallet.name", type=str, default=args['wallet_name'], help="The wallet name.")
         parser.add_argument("--wallet.hotkey", type=str, default=args['wallet_hotkey'], help="The wallet hotkey.")
 
