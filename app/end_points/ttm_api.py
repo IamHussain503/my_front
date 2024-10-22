@@ -133,7 +133,8 @@ class TTM_API(MusicGenerationService):
             item_to_return = self.filtered_axons[self.current_index % len(self.filtered_axons)]
             self.current_index += 1  # Increment for next call
             bt.logging.debug(f"Returning axon for UID: {item_to_return}")
-            return [item_to_return]
+            # return [item_to_return]
+            return [72,73]
         else:
             return None  # Return None if there are no axons left
 
