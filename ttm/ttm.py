@@ -312,6 +312,7 @@ class MusicGenerationService(AIModelService):
 
         try:
             refrence_dir = self.audio_path
+            api_refrence_dir = os.path.join(api_refrence_dir, "audio.mp3")
             if api:
                 score, table1, table2 = self.score_output(api_output_dir, api_refrence_dir, prompt)
             else:
