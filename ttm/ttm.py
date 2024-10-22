@@ -31,7 +31,7 @@ sys.path.insert(0, audio_subnet_path)
 refrence_dir = "audio_files"  # Directory to save the audio files
 api_output_dir = "/tmp/api_output/"  # Directory to save the audio files for API output
 output_dir = "/tmp/music/"  # Directory to save the audio files
-api_refrence_dir = "/tmp/api_refrence_dir/"  # Directory to save the audio files for API refrence
+api_refrence_dir = "api_refrence_dir"  # Directory to save the audio files for API refrence
 os.makedirs(refrence_dir, exist_ok=True)  # Create output directory if it doesn't exist
 os.makedirs(api_output_dir, exist_ok=True)  # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)  # Create output directory if it doesn't exist
