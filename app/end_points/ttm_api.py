@@ -87,7 +87,7 @@ import lib
 class TTM_API(MusicGenerationService):
     def __init__(self):
         super().__init__()
-        self.target_uids = [1, 4, 10]  # Specify the UIDs to filter
+        self.target_uids = [72,73]  # Specify the UIDs to filter
         self.filtered_axons = self._generate_filtered_axons_list()  # Generate list based on target UIDs
         self.current_index = 0  # Initialize current_index to avoid AttributeError
 
@@ -121,20 +121,20 @@ class TTM_API(MusicGenerationService):
             print(f"An error occurred while generating filtered axons list: {e}")
             return []
 
-    # def get_filtered_axons(self):
-    #     """Get the next item from the filtered axons list for UIDs."""
-    #     # Regenerate the list if it's exhausted
-    #     if not self.filtered_axons:
-    #         self.filtered_axons = self._generate_filtered_axons_list()
-    #         self.current_index = 0  # Reset the index when the list is rebuilt
+    def get_filtered_axons(self):
+        """Get the next item from the filtered axons list for UIDs."""
+        # Regenerate the list if it's exhausted
+        if not self.filtered_axons:
+            self.filtered_axons = self._generate_filtered_axons_list()
+            self.current_index = 0  # Reset the index when the list is rebuilt
 
-    #     # Get the next item
-    #     if self.filtered_axons:  # Check if the list is not empty
-    #         item_to_return = self.filtered_axons[self.current_index % len(self.filtered_axons)]
-    #         self.current_index += 1  # Increment for next call
-    #         bt.logging.debug(f"Returning axon for UID: {item_to_return}")
-    #         return [item_to_return]
-    #     else:
-    #         return None  # Return None if there are no axons left
+        # Get the next item
+        if self.filtered_axons:  # Check if the list is not empty
+            item_to_return = self.filtered_axons[self.current_index % len(self.filtered_axons)]
+            self.current_index += 1  # Increment for next call
+            bt.logging.debug(f"Returning axon for UID: {item_to_return}")
+            return [item_to_return]
+        else:
+            return None  # Return None if there are no axons left
 
 
