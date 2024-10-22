@@ -15,6 +15,8 @@ class MetricEvaluator:
     @staticmethod
     def calculate_kld(generated_audio_dir, target_audio_dir):
         try:
+            print("generated_audio_dir.................calculate_kld.............................", generated_audio_dir)
+            print("target_audio_dir.....................calculate_kld.........................", target_audio_dir)
             # Get the single audio file path in the directory
             generate = next((f for f in os.listdir(generated_audio_dir) if os.path.isfile(os.path.join(generated_audio_dir, f))), None)
             target = next((f for f in os.listdir(target_audio_dir) if os.path.isfile(os.path.join(target_audio_dir, f))), None)
@@ -174,6 +176,9 @@ class MusicQualityEvaluator:
         return os.path.dirname(path)
 
     def evaluate_music_quality(self, generated_audio, target_audio, text=None):
+      
+      print("generated_audio...................MusicQualityEvaluator...........................", generated_audio)
+      print("target_audio......................MusicQualityEvaluator........................", target_audio)   
       
       generated_audio_dir = self.get_directory(generated_audio)
       target_audio_dir = self.get_directory(target_audio)
